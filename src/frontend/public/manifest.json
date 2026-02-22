@@ -1,0 +1,20 @@
+{
+  "name": "Smart Farmer Guide",
+  "short_name": "Farmer Guide",
+  "description": "Complete farming companion for Indian farmers with crop schedules, fertilizer calculator, pest management, weather advisory, market prices, and government schemes",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f3e8",
+  "theme_color": "#2d5016",
+  "icons": [
+    {
+      "src": "/assets/generated/logo.dim_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["agriculture", "productivity", "education"],
+  "lang": "en-IN"
+}

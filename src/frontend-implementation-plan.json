@@ -1,0 +1,377 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Smart Farmer Guide Progressive Web App Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create splash screen with app logo and smooth transition to home screen after 2 seconds",
+      "acceptanceCriteria": [
+        "Splash screen displays app logo centered on screen",
+        "App name 'Smart Farmer Guide' is visible below logo",
+        "Automatically transitions to home screen after 2 seconds",
+        "Uses green/earthy color theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SplashScreen.tsx",
+          "operation": "create",
+          "description": "Create splash screen component displaying the app logo from frontend/public/assets/generated/logo.dim_512x512.png and app name 'Smart Farmer Guide'. Implement 2-second timer with smooth fade transition to home screen. Use green/earthy color theme from global design system."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire SplashScreen component into app routing. Show splash screen on initial load, then transition to home dashboard after 2 seconds. Manage splash screen display state."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create home dashboard with 6 large icon-based navigation cards for main features",
+      "acceptanceCriteria": [
+        "Dashboard displays 6 cards in a 2-column grid on mobile",
+        "Each card has a large, clear icon representing its function",
+        "Card text uses large fonts suitable for rural users",
+        "Cards are touch-friendly with adequate spacing",
+        "Navigation to each feature screen works on card tap"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create home dashboard page with 2-column responsive grid displaying 6 large navigation cards: Crop Schedule (using frontend/public/assets/generated/icon-crop-schedule.dim_128x128.png), Fertilizer Calculator (using frontend/public/assets/generated/icon-fertilizer.dim_128x128.png), Pest & Disease (using frontend/public/assets/generated/icon-pest-disease.dim_128x128.png), Weather Advisory (using frontend/public/assets/generated/icon-weather.dim_128x128.png), Market Prices (using frontend/public/assets/generated/icon-market-prices.dim_128x128.png), and Government Schemes (using frontend/public/assets/generated/icon-gov-schemes.dim_128x128.png). Use large fonts (24px+ for labels), touch-friendly card sizing (minimum 48x48px touch targets), and adequate spacing. Implement navigation to each feature screen on card tap."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register Dashboard page as the main route after splash screen. Set up routing structure for all 6 feature screens that will be navigated to from dashboard cards."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Crop Schedule screen with dropdown selector and timeline display for 4 crops",
+      "acceptanceCriteria": [
+        "Dropdown selector displays all 4 crop options with large, readable text",
+        "Timeline displays sequentially for selected crop",
+        "Each stage shows timing and key actions in farmer-friendly language",
+        "Visual timeline or card layout makes the sequence clear",
+        "All static data for 4 crops is included in the code"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/cropSchedules.ts",
+          "operation": "create",
+          "description": "Define static crop schedule data for Cotton, Soybean, Wheat, and Rice. Each crop includes step-by-step timeline stages: Sowing, Fertilizer stages, Irrigation, and Harvest. Store timing and key actions in farmer-friendly language for each stage."
+        },
+        {
+          "path": "frontend/src/pages/CropSchedule.tsx",
+          "operation": "create",
+          "description": "Create Crop Schedule page with large dropdown selector for 4 crops (Cotton, Soybean, Wheat, Rice). Display selected crop's timeline using card-based or visual timeline layout showing sequential stages (Sowing, Fertilizer stages, Irrigation, Harvest). Use large fonts and clear visual hierarchy. Import and display data from cropSchedules.ts."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register route for CropSchedule page and ensure navigation from Dashboard works correctly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create Fertilizer Dose Calculator with instant calculation logic",
+      "acceptanceCriteria": [
+        "Dropdown shows crop options with large text",
+        "Number input for land area accepts decimal values",
+        "Calculate button triggers instant calculation",
+        "Results display fertilizer types and quantities clearly",
+        "Calculation logic is embedded in frontend code",
+        "Results update immediately without any backend calls"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/fertilizerCalculator.ts",
+          "operation": "create",
+          "description": "Implement frontend calculation logic for fertilizer dosage. Define formulas for Urea, DAP, and other fertilizers based on crop type and land area in acres. Return fertilizer types and calculated quantities."
+        },
+        {
+          "path": "frontend/src/pages/FertilizerCalculator.tsx",
+          "operation": "create",
+          "description": "Create Fertilizer Calculator page with large dropdown for crop selection and number input for land area (accepts decimals). Add calculate button with large touch target. Display results instantly below inputs showing fertilizer types (Urea, DAP, etc.) and quantities. Use calculation logic from fertilizerCalculator.ts. No backend calls required."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register route for FertilizerCalculator page and ensure navigation from Dashboard works correctly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create Pest & Disease Management screen with crop-wise lists and placeholder images",
+      "acceptanceCriteria": [
+        "Crop selector shows all 4 crops",
+        "List displays relevant pests/diseases for selected crop",
+        "Each entry shows name, symptoms, control method, and chemical dosage",
+        "Placeholder images are used for each pest/disease",
+        "Text is simple and suitable for rural farmers",
+        "All data is static and embedded in the frontend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/pestDiseaseData.ts",
+          "operation": "create",
+          "description": "Define static pest and disease data for Cotton, Soybean, Wheat, and Rice. Each entry includes pest/disease name, symptoms, control method, chemical name, and dosage. Reference placeholder images: frontend/public/assets/generated/pest-cotton.dim_256x256.png, frontend/public/assets/generated/disease-soybean.dim_256x256.png, frontend/public/assets/generated/pest-wheat.dim_256x256.png, and frontend/public/assets/generated/disease-rice.dim_256x256.png. Use simple, farmer-friendly language."
+        },
+        {
+          "path": "frontend/src/pages/PestDisease.tsx",
+          "operation": "create",
+          "description": "Create Pest & Disease Management page with large crop selector for 4 crops. Display list of pests/diseases for selected crop. Each entry shows name, placeholder image, symptoms, control method, and chemical dosage in large, clear text. Import data from pestDiseaseData.ts."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register route for PestDisease page and ensure navigation from Dashboard works correctly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create Weather Advisory screen with simulated weather selection and advisory messages",
+      "acceptanceCriteria": [
+        "Three large buttons or cards for Sunny, Rainy, Cloudy selection",
+        "Advisory messages display immediately upon weather selection",
+        "Messages provide practical farming advice for each weather condition",
+        "No external API calls are made",
+        "All advisory content is static and embedded"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/weatherAdvisories.ts",
+          "operation": "create",
+          "description": "Define static weather advisory messages for three conditions: Sunny, Rainy, and Cloudy. Include practical farming advice such as 'Do not spray during rain' and 'Irrigation recommended'. Store as simple key-value mappings."
+        },
+        {
+          "path": "frontend/src/pages/WeatherAdvisory.tsx",
+          "operation": "create",
+          "description": "Create Weather Advisory page with three large, touch-friendly buttons or cards for Sunny, Rainy, and Cloudy weather selection. Display corresponding advisory messages immediately upon selection. Import advisory content from weatherAdvisories.ts. No API calls required."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register route for WeatherAdvisory page and ensure navigation from Dashboard works correctly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create Market Prices screen with static, easily updatable crop price list",
+      "acceptanceCriteria": [
+        "Table or list displays crop names and prices per quintal",
+        "Price data is stored in a clear, easily editable format",
+        "Display is optimized for mobile viewing",
+        "Supports at least 10 common crops",
+        "Includes clear code comments for updating prices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/marketPrices.ts",
+          "operation": "create",
+          "description": "Define static market price data for at least 10 common crops in APMC-style format. Store as array of objects with crop name and price per quintal. Include clear code comments explaining how to update prices for future maintenance."
+        },
+        {
+          "path": "frontend/src/pages/MarketPrices.tsx",
+          "operation": "create",
+          "description": "Create Market Prices page displaying crop prices in table or list format optimized for mobile. Show crop names and prices per quintal with large, readable text. Import data from marketPrices.ts."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register route for MarketPrices page and ensure navigation from Dashboard works correctly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create Government Schemes screen listing major schemes with eligibility and benefits",
+      "acceptanceCriteria": [
+        "List displays at least 3 major government schemes",
+        "Each scheme shows name, eligibility criteria, and benefits",
+        "Content is in simple, farmer-friendly language",
+        "Layout uses large fonts and clear cards",
+        "All scheme data is static and embedded"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/governmentSchemes.ts",
+          "operation": "create",
+          "description": "Define static data for at least 3 major government schemes: Crop insurance, Fertilizer subsidy, and Irrigation subsidy. Each scheme includes name, eligibility criteria, and benefits described in simple, farmer-friendly language."
+        },
+        {
+          "path": "frontend/src/pages/GovernmentSchemes.tsx",
+          "operation": "create",
+          "description": "Create Government Schemes page displaying list of schemes using large card layout. Each card shows scheme name, eligibility criteria, and benefits with large fonts and clear hierarchy. Import data from governmentSchemes.ts."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register route for GovernmentSchemes page and ensure navigation from Dashboard works correctly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Implement mobile-first responsive design with green/earthy theme and large, simple UI elements",
+      "acceptanceCriteria": [
+        "All screens are fully responsive on mobile devices",
+        "Primary color palette uses green and earthy tones",
+        "Buttons are large and touch-friendly (minimum 48x48px touch targets)",
+        "Font sizes are large throughout (minimum 16px body, 24px+ headings)",
+        "Navigation uses clear icons with labels",
+        "Layout is simple with minimal complexity",
+        "App performs well on low-end Android devices through browser"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global styles for mobile-first responsive design. Set base font size to minimum 16px for body text. Define green and earthy color palette as CSS variables (greens, browns, warm earth tones). Ensure all interactive elements meet minimum 48x48px touch target requirements. Apply simple, clean layout principles optimized for low-end devices."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure Tailwind theme with green/earthy color palette, large font scale (24px+ headings, 16px+ body), and mobile-first breakpoints. Define custom utilities for touch-friendly spacing and button sizes. Optimize for performance on low-end devices."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create reusable Layout component applying consistent green/earthy theme, large typography, and simple structure across all pages. Include mobile-optimized header with icon-based navigation if needed. Ensure layout remains performant on low-end Android browsers."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Structure codebase for easy future translation to Hindi and Marathi",
+      "acceptanceCriteria": [
+        "All user-facing text is stored in a centralized constants or i18n-ready file",
+        "Code comments clearly indicate translation points",
+        "Text strings are organized by screen/feature",
+        "No hardcoded strings in component JSX",
+        "Documentation explains how to add new languages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/constants/strings.ts",
+          "operation": "create",
+          "description": "Create centralized strings file organizing all user-facing text by screen/feature (splash, dashboard, crop schedule, fertilizer calculator, pest disease, weather advisory, market prices, government schemes). Add clear comments indicating translation points. Structure as nested objects ready for future i18n integration. Include documentation comments explaining how to add Hindi and Marathi translations in the future."
+        },
+        {
+          "path": "frontend/src/components/SplashScreen.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/CropSchedule.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/FertilizerCalculator.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/PestDisease.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/WeatherAdvisory.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/MarketPrices.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/src/pages/GovernmentSchemes.tsx",
+          "operation": "modify",
+          "description": "Replace any hardcoded text strings with imports from strings.ts constants file."
+        },
+        {
+          "path": "frontend/README.md",
+          "operation": "modify",
+          "description": "Add documentation section explaining the translation structure. Document how to add Hindi and Marathi translations by duplicating strings.ts structure and updating imports. Include clear examples and best practices."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Implement PWA functionality with service worker for offline access to all static data",
+      "acceptanceCriteria": [
+        "Service worker caches all static assets and data",
+        "App loads and functions without internet connection after first visit",
+        "All 6 feature screens work offline",
+        "PWA manifest allows installation to home screen",
+        "App remains functional on low-connectivity networks"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/manifest.json",
+          "operation": "create",
+          "description": "Create PWA manifest file defining app metadata for home screen installation: name 'Smart Farmer Guide', short_name, description, theme_color (green from palette), background_color, display mode 'standalone', orientation 'portrait', icons array referencing frontend/public/assets/generated/logo.dim_512x512.png. Set start_url to root."
+        },
+        {
+          "path": "frontend/src/serviceWorker.ts",
+          "operation": "create",
+          "description": "Implement service worker for caching static assets and data files. Cache all HTML, CSS, JS bundles, generated images (logo, all feature icons, pest/disease placeholder images), and static data. Implement cache-first strategy for offline functionality. Ensure all 6 feature screens (Crop Schedule, Fertilizer Calculator, Pest & Disease, Weather Advisory, Market Prices, Government Schemes) work offline after initial load."
+        },
+        {
+          "path": "frontend/src/index.tsx",
+          "operation": "modify",
+          "description": "Register service worker on app initialization to enable PWA functionality and offline caching. Add service worker registration with proper error handling."
+        },
+        {
+          "path": "frontend/public/index.html",
+          "operation": "modify",
+          "description": "Add PWA manifest link and theme-color meta tag. Include apple-touch-icon references for iOS compatibility. Ensure proper meta tags for mobile web app capabilities."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Apply creative, cohesive agricultural visual design theme throughout the interface",
+      "acceptanceCriteria": [
+        "Color palette consistently uses greens, browns, and earth tones",
+        "Visual style feels agricultural and nature-inspired",
+        "Design elements are simple and trustworthy",
+        "Typography is clear and highly legible",
+        "Icons and imagery relate to farming context",
+        "Overall aesthetic is cohesive across all screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Expand global styles with agricultural visual design theme. Define comprehensive color palette using greens (primary), browns (secondary), and warm earth tones (accents) as CSS variables. Apply nature-inspired design elements like organic shapes and textures. Ensure typography remains highly legible with clear hierarchy. Create trustworthy, approachable aesthetic suitable for rural farmers."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure Tailwind theme with full agricultural color palette (greens, browns, earth tones), nature-inspired spacing scale, and farming-context design tokens. Define custom utilities that reinforce agricultural aesthetic while maintaining simplicity and clarity."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Apply cohesive agricultural design theme to Layout component. Use nature-inspired visual elements that reinforce farming context. Ensure design remains simple, trustworthy, and approachable. Maintain consistency across all pages using this layout."
+        }
+      ]
+    }
+  ]
+}

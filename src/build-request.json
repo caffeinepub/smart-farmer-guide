@@ -1,0 +1,286 @@
+{
+  "kind": "build_request",
+  "title": "Build Smart Farmer Guide progressive web app",
+  "projectName": "Smart Farmer Guide",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a splash screen displaying the app logo and app name 'Smart Farmer Guide' with a smooth transition to the home screen after 2 seconds",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Splash Screen - App logo - App name: 'Smart Farmer Guide'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Splash screen displays app logo centered on screen",
+        "App name 'Smart Farmer Guide' is visible below logo",
+        "Automatically transitions to home screen after 2 seconds",
+        "Uses green/earthy color theme"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a home dashboard screen with a grid layout of 6 large, icon-based navigation cards: Crop Schedule, Fertilizer Calculator, Pest & Disease, Weather Advisory, Market Prices, and Government Schemes. Each card must have large, clear icons and text suitable for first-time smartphone users.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Home Screen (Dashboard) - Grid of 6 large cards: Crop Schedule, Fertilizer Calculator, Pest & Disease, Weather Advisory, Market Prices, Government Schemes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays 6 cards in a 2-column grid on mobile",
+        "Each card has a large, clear icon representing its function",
+        "Card text uses large fonts suitable for rural users",
+        "Cards are touch-friendly with adequate spacing",
+        "Navigation to each feature screen works on card tap"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a Crop Schedule screen with a dropdown to select crop (Cotton, Soybean, Wheat, Rice) and display a step-by-step timeline showing sowing, fertilizer stages, irrigation, and harvest phases for the selected crop using cards or timeline UI",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Crop Schedule Screen - Select crop (Cotton, Soybean, Wheat, Rice) - Show step-by-step timeline: Sowing, Fertilizer stages, Irrigation, Harvest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dropdown selector displays all 4 crop options with large, readable text",
+        "Timeline displays sequentially for selected crop",
+        "Each stage shows timing and key actions in farmer-friendly language",
+        "Visual timeline or card layout makes the sequence clear",
+        "All static data for 4 crops is included in the code"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a Fertilizer Dose Calculator screen with input fields for crop name (dropdown) and land area in acres (number input), and calculate fertilizer quantities (Urea, DAP, etc.) using local logic. Display results instantly below the inputs.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Fertilizer Dose Calculator Screen - Inputs: Crop name, Land area (in acres) - Output: Fertilizer name (Urea, DAP, etc.), Quantity calculation using local logic"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dropdown shows crop options with large text",
+        "Number input for land area accepts decimal values",
+        "Calculate button triggers instant calculation",
+        "Results display fertilizer types and quantities clearly",
+        "Calculation logic is embedded in frontend code",
+        "Results update immediately without any backend calls"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a Pest & Disease Management screen showing crop-wise lists of common pests and diseases. Each entry must display pest/disease name, symptoms, control method, and chemical name with dosage. Use placeholder images and simple, farmer-friendly text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Pest & Disease Management Screen - Crop-wise pest and disease list - Each item shows: Pest/Disease name, Symptoms, Control method, Chemical name and dosage"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Crop selector shows all 4 crops",
+        "List displays relevant pests/diseases for selected crop",
+        "Each entry shows name, symptoms, control method, and chemical dosage",
+        "Placeholder images are used for each pest/disease",
+        "Text is simple and suitable for rural farmers",
+        "All data is static and embedded in the frontend"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a Weather Advisory screen with simulated weather options (Sunny, Rainy, Cloudy) that can be selected by the user, and display farming advisory messages based on the selected condition (e.g., 'Do not spray during rain', 'Irrigation recommended')",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Weather Advisory Screen - No API required - Simulated weather options: Sunny / Rainy / Cloudy - Show advisory messages: 'Do not spray during rain', 'Irrigation recommended'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Three large buttons or cards for Sunny, Rainy, Cloudy selection",
+        "Advisory messages display immediately upon weather selection",
+        "Messages provide practical farming advice for each weather condition",
+        "No external API calls are made",
+        "All advisory content is static and embedded"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a Market Prices screen displaying a static list of crop prices in APMC style format showing crop name and price per quintal. Make the data easy to update by storing it in a simple, well-documented format.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Market Prices Screen - Static crop price list (APMC style) - Crop name and price per quintal - Easy to update locally"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Table or list displays crop names and prices per quintal",
+        "Price data is stored in a clear, easily editable format",
+        "Display is optimized for mobile viewing",
+        "Supports at least 10 common crops",
+        "Includes clear code comments for updating prices"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a Government Schemes screen listing major schemes (crop insurance, fertilizer subsidy, irrigation subsidy) with details about eligibility criteria and benefits for each scheme",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Government Schemes Screen - Major schemes list: Crop insurance, Fertilizer subsidy, Irrigation subsidy - Show eligibility and benefits"
+        ]
+      },
+      "acceptanceCriteria": [
+        "List displays at least 3 major government schemes",
+        "Each scheme shows name, eligibility criteria, and benefits",
+        "Content is in simple, farmer-friendly language",
+        "Layout uses large fonts and clear cards",
+        "All scheme data is static and embedded"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Implement a mobile-first responsive design with green and earthy color theme throughout the app. Use large buttons, large fonts, icon-based navigation, and ensure the layout is extremely simple and suitable for first-time smartphone users on low-end Android devices.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Mobile-first Android UI - Very simple layout - Large buttons and fonts - Green / earthy color theme - Icon-based navigation - Easy for first-time smartphone users"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All screens are fully responsive on mobile devices",
+        "Primary color palette uses green and earthy tones",
+        "Buttons are large and touch-friendly (minimum 48x48px touch targets)",
+        "Font sizes are large throughout (minimum 16px body, 24px+ headings)",
+        "Navigation uses clear icons with labels",
+        "Layout is simple with minimal complexity",
+        "App performs well on low-end Android devices through browser"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Structure the codebase to support easy future translation to Hindi and Marathi by isolating all user-facing text strings in a centralized location with clear comments indicating translation points",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Support future translation to Hindi / Marathi"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All user-facing text is stored in a centralized constants or i18n-ready file",
+        "Code comments clearly indicate translation points",
+        "Text strings are organized by screen/feature",
+        "No hardcoded strings in component JSX",
+        "Documentation explains how to add new languages"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Implement progressive web app (PWA) functionality with a service worker to enable offline access to all static data including crop schedules, fertilizer calculations, pest management information, weather advisories, market prices, and government schemes",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The app must work fully offline for static data"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Service worker caches all static assets and data",
+        "App loads and functions without internet connection after first visit",
+        "All 6 feature screens work offline",
+        "PWA manifest allows installation to home screen",
+        "App remains functional on low-connectivity networks"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Apply a creative, cohesive visual design theme with an earthy, agricultural aesthetic that uses greens, browns, and warm earth tones. The design should feel trustworthy and approachable for rural farmers, with nature-inspired elements that reinforce the farming context throughout the interface.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette consistently uses greens, browns, and earth tones",
+        "Visual style feels agricultural and nature-inspired",
+        "Design elements are simple and trustworthy",
+        "Typography is clear and highly legible",
+        "Icons and imagery relate to farming context",
+        "Overall aesthetic is cohesive across all screens"
+      ]
+    }
+  ],
+  "constraints": [
+    "Must be a progressive web app, not a native Flutter/Android application",
+    "Must work fully offline for all static data after initial load",
+    "No backend API calls for core functionality",
+    "No user authentication or login system required",
+    "All data must be static and embedded in the frontend code",
+    "Must perform well on low-end Android devices through mobile browsers",
+    "Must not use any paid third-party APIs"
+  ],
+  "nonGoals": [
+    "Native Android app development with Flutter",
+    "Real-time weather API integration",
+    "Live market price updates from external sources",
+    "User accounts or personalized data storage",
+    "Backend database for storing user data",
+    "Multi-language support in initial version (only structure for future translation)",
+    "Play Store deployment (PWA installation from browser instead)",
+    "GPS or location-based features",
+    "Push notifications",
+    "Social sharing features"
+  ],
+  "imageRequirements": {
+    "required": [
+      "App logo for Smart Farmer Guide with farming/agricultural theme, green tones (logo.dim_512x512.png)",
+      "Large icon for Crop Schedule feature showing calendar or planting imagery (icon-crop-schedule.dim_128x128.png)",
+      "Large icon for Fertilizer Calculator showing fertilizer bag or chemical symbol (icon-fertilizer.dim_128x128.png)",
+      "Large icon for Pest & Disease showing insect or plant disease imagery (icon-pest-disease.dim_128x128.png)",
+      "Large icon for Weather Advisory showing sun, cloud, or rain symbols (icon-weather.dim_128x128.png)",
+      "Large icon for Market Prices showing rupee symbol or market stand (icon-market-prices.dim_128x128.png)",
+      "Large icon for Government Schemes showing government building or document (icon-gov-schemes.dim_128x128.png)",
+      "Placeholder image for cotton pest example (pest-cotton.dim_256x256.png)",
+      "Placeholder image for soybean disease example (disease-soybean.dim_256x256.png)",
+      "Placeholder image for wheat pest example (pest-wheat.dim_256x256.png)",
+      "Placeholder image for rice disease example (disease-rice.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

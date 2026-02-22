@@ -1,0 +1,249 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-splash-screen-displaying-the-app-logo-and-app-name-smart-farmer-guide-with-a-smooth-transition-to-the-home-screen-after-2-seconds",
+      "featureTitle": "Create a splash screen displaying the app logo and app name 'Smart Farmer Guide' with a smooth transition to the home screen after 2 seconds",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SplashScreen.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-home-dashboard-screen-with-a-grid-layout-of-6-large-icon-based-navigation-cards-crop-schedule-fertilizer-calculator-pest-disease-weather-advisory-market-prices-and-government-schemes-each-card-must-have-large-clear-icons-and-text-suitable-for-first-time-smartphone-users",
+      "featureTitle": "Create a home dashboard screen with a grid layout of 6 large, icon-based navigation cards: Crop Schedule, Fertilizer Calculator, Pest & Disease, Weather Advisory, Market Prices, and Government Schemes. Each card must have large, clear icons and text suitable for first-time smartphone users.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-crop-schedule-screen-with-a-dropdown-to-select-crop-cotton-soybean-wheat-rice-and-display-a-step-by-step-timeline-showing-sowing-fertilizer-stages-irrigation-and-harvest-phases-for-the-selected-crop-using-cards-or-timeline-ui",
+      "featureTitle": "Create a Crop Schedule screen with a dropdown to select crop (Cotton, Soybean, Wheat, Rice) and display a step-by-step timeline showing sowing, fertilizer stages, irrigation, and harvest phases for the selected crop using cards or timeline UI",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/data/cropSchedules.ts",
+        "frontend/src/pages/CropSchedule.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-fertilizer-dose-calculator-screen-with-input-fields-for-crop-name-dropdown-and-land-area-in-acres-number-input-and-calculate-fertilizer-quantities-urea-dap-etc-using-local-logic-display-results-instantly-below-the-inputs",
+      "featureTitle": "Create a Fertilizer Dose Calculator screen with input fields for crop name (dropdown) and land area in acres (number input), and calculate fertilizer quantities (Urea, DAP, etc.) using local logic. Display results instantly below the inputs.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/FertilizerCalculator.tsx",
+        "frontend/src/utils/fertilizerCalculator.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-pest-disease-management-screen-showing-crop-wise-lists-of-common-pests-and-diseases-each-entry-must-display-pest-disease-name-symptoms-control-method-and-chemical-name-with-dosage-use-placeholder-images-and-simple-farmer-friendly-text",
+      "featureTitle": "Create a Pest & Disease Management screen showing crop-wise lists of common pests and diseases. Each entry must display pest/disease name, symptoms, control method, and chemical name with dosage. Use placeholder images and simple, farmer-friendly text.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/data/pestDiseaseData.ts",
+        "frontend/src/pages/PestDisease.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-weather-advisory-screen-with-simulated-weather-options-sunny-rainy-cloudy-that-can-be-selected-by-the-user-and-display-farming-advisory-messages-based-on-the-selected-condition-e-g-do-not-spray-during-rain-irrigation-recommended",
+      "featureTitle": "Create a Weather Advisory screen with simulated weather options (Sunny, Rainy, Cloudy) that can be selected by the user, and display farming advisory messages based on the selected condition (e.g., 'Do not spray during rain', 'Irrigation recommended')",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/data/weatherAdvisories.ts",
+        "frontend/src/pages/WeatherAdvisory.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-market-prices-screen-displaying-a-static-list-of-crop-prices-in-apmc-style-format-showing-crop-name-and-price-per-quintal-make-the-data-easy-to-update-by-storing-it-in-a-simple-well-documented-format",
+      "featureTitle": "Create a Market Prices screen displaying a static list of crop prices in APMC style format showing crop name and price per quintal. Make the data easy to update by storing it in a simple, well-documented format.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/data/marketPrices.ts",
+        "frontend/src/pages/MarketPrices.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-government-schemes-screen-listing-major-schemes-crop-insurance-fertilizer-subsidy-irrigation-subsidy-with-details-about-eligibility-criteria-and-benefits-for-each-scheme",
+      "featureTitle": "Create a Government Schemes screen listing major schemes (crop insurance, fertilizer subsidy, irrigation subsidy) with details about eligibility criteria and benefits for each scheme",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/data/governmentSchemes.ts",
+        "frontend/src/pages/GovernmentSchemes.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-mobile-first-responsive-design-with-green-and-earthy-color-theme-throughout-the-app-use-large-buttons-large-fonts-icon-based-navigation-and-ensure-the-layout-is-extremely-simple-and-suitable-for-first-time-smartphone-users-on-low-end-android-devices",
+      "featureTitle": "Implement a mobile-first responsive design with green and earthy color theme throughout the app. Use large buttons, large fonts, icon-based navigation, and ensure the layout is extremely simple and suitable for first-time smartphone users on low-end Android devices.",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-structure-the-codebase-to-support-easy-future-translation-to-hindi-and-marathi-by-isolating-all-user-facing-text-strings-in-a-centralized-location-with-clear-comments-indicating-translation-points",
+      "featureTitle": "Structure the codebase to support easy future translation to Hindi and Marathi by isolating all user-facing text strings in a centralized location with clear comments indicating translation points",
+      "files": [
+        "frontend/README.md",
+        "frontend/src/components/SplashScreen.tsx",
+        "frontend/src/constants/strings.ts",
+        "frontend/src/pages/CropSchedule.tsx",
+        "frontend/src/pages/Dashboard.tsx",
+        "frontend/src/pages/FertilizerCalculator.tsx",
+        "frontend/src/pages/GovernmentSchemes.tsx",
+        "frontend/src/pages/MarketPrices.tsx",
+        "frontend/src/pages/PestDisease.tsx",
+        "frontend/src/pages/WeatherAdvisory.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-progressive-web-app-pwa-functionality-with-a-service-worker-to-enable-offline-access-to-all-static-data-including-crop-schedules-fertilizer-calculations-pest-management-information-weather-advisories-market-prices-and-government-schemes",
+      "featureTitle": "Implement progressive web app (PWA) functionality with a service worker to enable offline access to all static data including crop schedules, fertilizer calculations, pest management information, weather advisories, market prices, and government schemes",
+      "files": [
+        "frontend/public/manifest.json",
+        "frontend/src/serviceWorker.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-creative-cohesive-visual-design-theme-with-an-earthy-agricultural-aesthetic-that-uses-greens-browns-and-warm-earth-tones-the-design-should-feel-trustworthy-and-approachable-for-rural-farmers-with-nature-inspired-elements-that-reinforce-the-farming-context-throughout-the-interface",
+      "featureTitle": "Apply a creative, cohesive visual design theme with an earthy, agricultural aesthetic that uses greens, browns, and warm earth tones. The design should feel trustworthy and approachable for rural farmers, with nature-inspired elements that reinforce the farming context throughout the interface.",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Agricultural Green & Earth Tones Color System */
+        /* Primary - Rich Agricultural Green */
+        --background: 0.98 0.01 140;
+        --foreground: 0.25 0.03 140;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.03 140;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.03 140;
+        --primary: 0.45 0.15 145;
+        --primary-foreground: 0.98 0.01 140;
+        
+        /* Secondary - Warm Earth Brown */
+        --secondary: 0.55 0.08 60;
+        --secondary-foreground: 0.98 0.01 140;
+        
+        /* Muted - Soft Earth Tones */
+        --muted: 0.92 0.02 100;
+        --muted-foreground: 0.50 0.05 140;
+        
+        /* Accent - Vibrant Nature Green */
+        --accent: 0.65 0.18 150;
+        --accent-foreground: 0.98 0.01 140;
+        
+        /* Destructive - Natural Red */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        /* Borders & Inputs */
+        --border: 0.85 0.03 140;
+        --input: 0.85 0.03 140;
+        --ring: 0.45 0.15 145;
+        
+        /* Custom Earth Colors */
+        --earth-green: 0.45 0.15 145;
+        --earth-brown: 0.40 0.10 50;
+        --earth-dark: 0.30 0.08 140;
+        --earth-light: 0.95 0.02 140;
+        --earth-cream: 0.97 0.02 80;
+        
+        /* Chart Colors - Nature Inspired */
+        --chart-1: 0.55 0.18 145;
+        --chart-2: 0.60 0.15 60;
+        --chart-3: 0.50 0.12 180;
+        --chart-4: 0.65 0.20 120;
+        --chart-5: 0.45 0.10 40;
+    }
+
+    .dark {
+        --background: 0.20 0.03 140;
+        --foreground: 0.95 0.02 140;
+        --card: 0.25 0.03 140;
+        --card-foreground: 0.95 0.02 140;
+        --popover: 0.25 0.03 140;
+        --popover-foreground: 0.95 0.02 140;
+        --primary: 0.55 0.18 145;
+        --primary-foreground: 0.20 0.03 140;
+        --secondary: 0.45 0.10 60;
+        --secondary-foreground: 0.95 0.02 140;
+        --muted: 0.30 0.04 140;
+        --muted-foreground: 0.75 0.03 140;
+        --accent: 0.50 0.15 150;
+        --accent-foreground: 0.95 0.02 140;
+        --destructive: 0.50 0.20 25;
+        --destructive-foreground: 0.95 0.02 140;
+        --border: 0.35 0.04 140;
+        --input: 0.35 0.04 140;
+        --ring: 0.55 0.18 145;
+        
+        --earth-green: 0.50 0.16 145;
+        --earth-brown: 0.45 0.12 50;
+        --earth-dark: 0.25 0.05 140;
+        --earth-light: 0.85 0.03 140;
+        --earth-cream: 0.30 0.03 80;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* Large, readable typography for rural users */
+    h1 {
+        @apply text-4xl font-bold;
+    }
+    
+    h2 {
+        @apply text-3xl font-bold;
+    }
+    
+    h3 {
+        @apply text-2xl font-semibold;
+    }
+    
+    h4 {
+        @apply text-xl font-semibold;
+    }
+    
+    /* Touch-friendly minimum target size */
+    .touch-target {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+@layer utilities {
+    /* Custom earth tone utilities */
+    .bg-earth-green {
+        background-color: oklch(var(--earth-green));
+    }
+    
+    .bg-earth-brown {
+        background-color: oklch(var(--earth-brown));
+    }
+    
+    .bg-earth-dark {
+        background-color: oklch(var(--earth-dark));
+    }
+    
+    .bg-earth-light {
+        background-color: oklch(var(--earth-light));
+    }
+    
+    .bg-earth-cream {
+        background-color: oklch(var(--earth-cream));
+    }
+    
+    .text-earth-green {
+        color: oklch(var(--earth-green));
+    }
+    
+    .text-earth-brown {
+        color: oklch(var(--earth-brown));
+    }
+    
+    .text-earth-dark {
+        color: oklch(var(--earth-dark));
+    }
+    
+    .text-earth-light {
+        color: oklch(var(--earth-light));
+    }
+    
+    .border-earth-green {
+        border-color: oklch(var(--earth-green));
+    }
+    
+    /* Smooth fade-in animation for splash screen */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out;
+    }
+}
